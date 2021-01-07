@@ -298,7 +298,7 @@ namespace K4_Kontrolinis
             {
                 Console.WriteLine("Informacija apie brangiausią autoriaus {0} {1} knygą: ", pavarde, vardas);
                 Console.WriteLine("{0, 20} {1, 15} {2, 20} {3, 10} {4, 6}", "Pavardė", "Vardas", "Knygos pavadinimas",
-                "Leidykla", "Kaina");
+                    "Leidykla", "Kaina");
                 Console.WriteLine(brangiausia);
             }
             Naujas.Naikinti();
