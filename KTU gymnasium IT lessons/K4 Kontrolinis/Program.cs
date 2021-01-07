@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Text;
 
@@ -244,12 +244,12 @@ namespace K4_Kontrolinis
             Console.WriteLine();
         }
 
-        static Autoriai FormuotiNauja(Autoriai aut, string ReikiamaLeidykla)
+        static Autoriai FormuotiNauja(Autoriai aut, string reikiamaLeidykla)
         {
             Autoriai ret = new Autoriai();
             for (aut.Pradzia(); aut.ArYra(); aut.Kitas())
             {
-                if (aut.ImtiDuomenis().ImtiLeidykla() == ReikiamaLeidykla)
+                if (aut.ImtiDuomenis().ImtiLeidykla() == reikiamaLeidykla)
                 {
                     Autorius pirmas = aut.ImtiDuomenis();
                     Autorius cur = new Autorius(pirmas.ImtiPavarde(), pirmas.ImtiVarda(), 
