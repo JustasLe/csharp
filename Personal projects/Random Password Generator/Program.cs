@@ -34,7 +34,7 @@ namespace RandomPasswordGenerator
             return passwordLength;
         }
 
-        static string GenerateRandomPassword(int length)
+        static string GenerateRandomPassword(int passwordLength)
         {
             string alphabet = "";
             for (char c = 'a'; c <= 'z'; c++)
@@ -46,11 +46,11 @@ namespace RandomPasswordGenerator
             {
                 alphabet += c;
             }
-            byte[] randomBytes = new byte[length];
+            byte[] randomBytes = new byte[passwordLength];
             RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
             rng.GetBytes(randomBytes);
             string password = "";
-            for (int i = 0; i < length; i++)
+            for (int i = 0; i < passwordLength; i++)
             {
                 password += alphabet[randomBytes[i] % alphabet.Length];
             }
@@ -60,11 +60,11 @@ namespace RandomPasswordGenerator
 
         static void Main(string[] args)
         {
-            int length = GetPasswordLength();
-            Console.WriteLine($"\n10 random passwords of length {length}:");
+            int passwordLength = GetPasswordLength();
+            Console.WriteLine($"\n10 random passwords of length {passwordLength}:");
             for (int i = 0; i < 10; i++)
             {
-                Console.WriteLine(GenerateRandomPassword(length));
+                Console.WriteLine(GenerateRandomPassword(passwordLength));
             }
         }
     }
