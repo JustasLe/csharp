@@ -8,10 +8,10 @@ namespace WordsFrequencyCounter
 {
     class Program
     {
-        static char[] FindSeparators(string InputFile)
+        static char[] FindSeparators(string inputFile)
         {
             List<char> separators = new List<char>();
-            using (StreamReader reader = new StreamReader(InputFile))
+            using (StreamReader reader = new StreamReader(inputFile))
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)
@@ -28,10 +28,10 @@ namespace WordsFrequencyCounter
             return separators.ToArray();
         }
 
-        static SortedDictionary<string, int> CalculateWordFrequencies(string InputFile, char[] separators)
+        static SortedDictionary<string, int> CalculateWordFrequencies(string inputFile, char[] separators)
         {
             SortedDictionary<string, int> wordFrequencies = new SortedDictionary<string, int>();
-            using (StreamReader reader = new StreamReader(InputFile))
+            using (StreamReader reader = new StreamReader(inputFile))
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)
@@ -67,11 +67,11 @@ namespace WordsFrequencyCounter
 
         static void Main(string[] args)
         {
-            string InputFile = "input.txt";
+            string inputFile = "input.txt";
             Console.WriteLine("The program analyzes frequencies based on the text in input.txt");
             Console.WriteLine("The program turns all words into lower case.");
-            char[] separators = FindSeparators(InputFile);
-            SortedDictionary<string, int> wordFrequencies = CalculateWordFrequencies(InputFile, separators);
+            char[] separators = FindSeparators(inputFile);
+            SortedDictionary<string, int> wordFrequencies = CalculateWordFrequencies(inputFile, separators);
             PrintWordFrequencies(wordFrequencies);
         }
     }
